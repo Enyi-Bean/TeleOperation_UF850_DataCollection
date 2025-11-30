@@ -1,0 +1,43 @@
+# Python 虚拟环境
+televr/
+teleReal/
+venv/
+.venv/
+env/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 采集的数据集 (太大，不上传)
+uf850_teleop_dataset/
+*.parquet
+*.mp4
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+
+# 标定数据 (包含机器特定配置)
+calibration_data*.json
+
+# Claude 配置
+.claude/
+
+# 嵌入的 git 仓库
+Isaac-GR00T/
