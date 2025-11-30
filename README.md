@@ -1,6 +1,6 @@
-# TeleVR - UF850 机械臂 VR 遥操作系统
+# TeleOperation_UF850_DataCollection
 
-基于 Quest 3 的 UF850 机械臂 VR 遥操作系统，支持实时遥操作控制和 LeRobot 格式的演示轨迹数据采集。
+基于 Quest 3 的 UF850 机械臂 VR 遥操作系统，用于采集 LeRobot 格式的专家演示轨迹数据，可用于 VLA (Vision-Language-Action) 模型训练。
 
 ## 功能特性
 
