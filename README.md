@@ -1,6 +1,6 @@
 # TeleOperation_UF850_DataCollection
 
-基于 Quest 3 的 UF850 机械臂 VR 遥操作系统，用于采集 LeRobot 格式的专家演示轨迹数据，可用于 VLA (Vision-Language-Action) 模型训练。
+基于Quest 3的UF850 机械臂VR遥操作系统，用于采集LeRobot格式的专家演示轨迹数据，可用于VLA模型训练。
 
 ## 功能特性
 
@@ -165,69 +165,6 @@ teleVR/real/webxr/uf850_teleop_dataset/
     ├── episodes.jsonl
     └── tasks.jsonl
 ```
-
-### 数据格式
-
-采集的数据符合 LeRobot/GR00T 格式:
-
-- **观测 (observation)**:
-  - `observation.state`: 机械臂关节角度 (7维: 6个关节 + 夹爪)
-  - `observation.images.cam_X`: 相机图像 (MP4 视频)
-
-- **动作 (action)**: 末端执行器位姿 + 夹爪状态 (7维)
-
-- **采样频率**: 30Hz
-
----
-
-## 项目结构
-
-```
-teleVR/
-├── README.md
-├── real/
-│   ├── config.py                 # 机械臂配置文件
-│   └── webxr/
-│       ├── index.html            # WebXR 前端页面
-│       ├── start_usb.sh          # USB 连接启动脚本
-│       ├── robot_control_half_mirror_with_rotation.py  # 纯遥操作
-│       ├── robot_control_with_data_collection.py       # 遥操作+数据采集
-│       ├── data_collection/      # 数据采集模块
-│       │   ├── camera_manager.py
-│       │   ├── data_collector.py
-│       │   └── episode_recorder.py
-│       └── uf850_teleop_dataset/ # 采集的数据 (gitignore)
-└── televr/                       # Python 虚拟环境 (gitignore)
-```
-
-## 故障排除
-
-### Quest 3 无法连接
-1. 确保开启了开发者模式
-2. USB 连接后在头显中点击"允许 USB 调试"
-3. 运行 `adb devices` 确认设备已连接
-
-### 机械臂无响应
-1. 检查 IP 配置是否正确
-2. 确保机械臂已使能 (绿灯)
-3. 检查是否处于伺服模式
-
-### WebSocket 连接失败
-1. 确保终端 1 的 Python 服务已启动
-2. 检查端口 8765 和 8080 是否被占用
-
-## 依赖列表
-
-```
-numpy>=1.20.0
-pandas>=1.3.0
-pyarrow>=6.0.0
-opencv-python>=4.5.0
-websockets>=10.0
-pyrealsense2>=2.54.0
-xArm-Python-SDK
-```
-
 ## License
 
 MIT License
